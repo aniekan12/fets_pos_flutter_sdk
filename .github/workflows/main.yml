@@ -1,0 +1,17 @@
+name: fets sdk workflow
+
+on: 
+  push:
+    branches:
+      - main
+  
+
+jobs:
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    with:
+      coverage_excludes: '*.g.dart'
+      flutter_channel: 'stable'
+      flutter_version: '3.16.5'
+      working_directory: '.'
+      test_recursion: true
